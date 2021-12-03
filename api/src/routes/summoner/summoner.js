@@ -11,6 +11,22 @@ router.get("/", (req, res, next) => {
     return res.status(200).send("Get de summoner")
 })
 
+// router.get("/desban", async(req, res, next) => {
+//     const allSummoners = await Summoner.find()
+//     //New date, y buscar los bans que coincidan con esa date. Si coincide, se borra del array de champs banned.
+
+//     allSummoners.forEach(
+//         summoner => summoner.champsBannedComplete.forEach(
+//             banObj => {
+//                 if(banObj.till >= Date.now()) {
+//                        lo saco de la lista
+//                 }
+//             }
+//         )
+//     )
+//     return res.status(200).send(allSummoners)
+// })
+
 router.get("/all", async (req, res, next) => {
     const allSummoners = await Summoner.find()
     const allNames = allSummoners.map(summoner => summoner.name)

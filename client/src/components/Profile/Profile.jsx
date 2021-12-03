@@ -33,14 +33,14 @@ function Profile({text, petitions, bans, voted, setVoted, userLogged}) {
             </TitleDiv>
             <BansDiv>
                 {bans.length > 0 && 
-                bans.map(ban => <Ban ban={ban}/>)
+                bans.map((ban, index) => <Ban key={index} ban={ban}/>)
                 }
             </BansDiv>
             <NewPetitionDiv>
                 <NewPetitionButton>NUEVA PETICION</NewPetitionButton>
             </NewPetitionDiv>
             <PetitionsDiv>
-                {petitions.map(petition => <Petition petition={petition} setVoted={setVoted} voted={voted} userLogged={userLogged} />)}
+                {petitions.map((petition, index) => <Petition key={index} petition={petition} setVoted={setVoted} voted={voted} userLogged={userLogged} />)}
             </PetitionsDiv>
         </MainSection>
     )

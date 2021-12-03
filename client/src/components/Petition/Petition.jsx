@@ -70,7 +70,7 @@ function Petition({petition, voted, setVoted, userLogged}) {
             {petition.games.length > 0 && 
                 <GamesDiv>
                     <GamesTitle>Partidas:</GamesTitle>
-                    {petition.games.map(game => <LinkGame>{game}</LinkGame>)}        
+                    {petition.games.map((game, index) => <LinkGame key={index}>{game}</LinkGame>)}        
                 </GamesDiv>
             }
             <DefenseDiv>
@@ -118,7 +118,7 @@ function Petition({petition, voted, setVoted, userLogged}) {
             <VotesDiv>
                 <TitleDivision>Votaron:</TitleDivision>
                 <VotesNamesDiv>
-                    {petition.alreadyVoted.map(voteName => <Vote>{voteName},</Vote>)}
+                    {petition.alreadyVoted.map((voteName, index) => <Vote key={index}>{voteName},</Vote>)}
                 </VotesNamesDiv>
                 {completeDate}
             </VotesDiv>

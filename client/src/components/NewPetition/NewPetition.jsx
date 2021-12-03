@@ -71,15 +71,15 @@ function NewPetition({champList, summonersNames}) {
                     <Label>A quien?</Label>
                     <Select onChange={handleChangeForm} name="to" value={petition.to}>
                         <Option value={null}></Option>
-                        {summonersNames.map(name => <Option value={name}>{name}</Option>)}
+                        {summonersNames.map((name, index) => <Option key={index} value={name}>{name}</Option>)}
                     </Select>
                     <Label>Champion:</Label>
                     <Select onChange={handleChangeForm} name="champion" value={petition.champion}>
                         <Option value={null}></Option>
-                        {champList.map(champ => <Option value={champ}>{champ}</Option>)}
+                        {champList.map((champ, index) => <Option key={index} value={champ}>{champ}</Option>)}
                     </Select>
                     <Label>Games:</Label>
-                    {petition.games.map(game => <span>{game}</span>)}
+                    {petition.games.map((game, index) => <span key={index}>{game}</span>)}
                     <Input 
                         name="games"
                         onChange={handleGamesChange}

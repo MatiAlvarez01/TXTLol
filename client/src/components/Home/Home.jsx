@@ -33,8 +33,9 @@ function Home({users, pendingPetitions, voted, setVoted, userLogged}) {
                 />
             </TitleDiv>
             <CardsDiv>
-                {users.map(user => 
+                {users.map((user, index) => 
                 <Card 
+                    key={index}
                     summonerName={user}
                 />
                 )}
@@ -45,7 +46,7 @@ function Home({users, pendingPetitions, voted, setVoted, userLogged}) {
                 </StyledLink>
             </NewPetitionDiv>
             <PendingPetitionsDiv>
-                {pendingPetitions.map(petition => <Petition petition={petition} setVoted={setVoted} voted={voted} userLogged={userLogged}/>)}
+                {pendingPetitions.map((petition, index) => <Petition key={index} petition={petition} setVoted={setVoted} voted={voted} userLogged={userLogged}/>)}
             </PendingPetitionsDiv>
         </MainSection>
     )

@@ -158,9 +158,9 @@ router.post("/votePositive", async (req, res, next) => {
     const userSessionName = req?.session?.passport?.user?.name;
     if(!userSessionName) return res.status(500).send("You need to Log in before vote any petition")
     const petitionSelected = await Petition.findById(petitionID);
-    // if (petitionSelected.alreadyVoted.includes(userSessionName)) {
-    //     return res.status(500).send(`${userSessionName} already voted this petition`);
-    // } else
+    if (petitionSelected.alreadyVoted.includes(userSessionName)) {
+        return res.status(500).send(`${userSessionName} already voted this petition`);
+    } else
      if (petitionSelected.status === "Accepted" || petitionSelected.status === "Rejected") {
         return res.status(500).send("Petition is not Pending anymore")
     } else {

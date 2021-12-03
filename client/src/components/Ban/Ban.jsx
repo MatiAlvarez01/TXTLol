@@ -7,10 +7,16 @@ function Ban({ban}) {
 
     const date = new Date(ban.till)
     const completeDate = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate();
+    console.log("Ban till: ", ban.till)
+    console.log("now: ", Date.now())
     return (
         <MainSection>
+            {ban.till >= Date.now() ? 
+            <>
             <ChampImg src={`/championicon/${ban.champion}.png`} alt={ban.champion}/>
             <StyledMoment to={completeDate}>{ban.date}</StyledMoment>
+            </> : 
+            null}
         </MainSection>
     )
 }
