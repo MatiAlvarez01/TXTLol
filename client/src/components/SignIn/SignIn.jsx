@@ -36,7 +36,7 @@ function SignIn() {
                 .then(() => {
                     dispatch(getUserLogged())
                     .then(() => {
-                        history.push("/Scrinb0y")
+                        history.push("/")
                     })
                 })
             })
