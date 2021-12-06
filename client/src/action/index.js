@@ -29,7 +29,7 @@ export function getAllPetitions() {
         return axios({
             method: "get",
             withCredentials: true,
-            url: "https://guarded-castle-25124.herokuapp.com/petitions/all"
+            url: "http://localhost:3001/petitions/all"
         })
             .then(allPetitions => {
                 dispatch({
@@ -49,7 +49,7 @@ export function getPetitionsBySummoner(summonerName) {
         return axios({
             method: "get",
             withCredentials: true,
-            url: `https://guarded-castle-25124.herokuapp.com/petitions/${summonerName}`
+            url: `http://localhost:3001/petitions/${summonerName}`
         })
             .then(summonerPetitions => {
                 dispatch({
@@ -69,7 +69,7 @@ export function getPetitionsAccepted(summonerName) {
         return axios({
             method: "get",
             withCredentials: true,
-            url: `https://guarded-castle-25124.herokuapp.com/petitions/${summonerName}/filter/accepted`
+            url: `http://localhost:3001/petitions/${summonerName}/filter/accepted`
         })
             .then(summonerPetitionsAccepted => {
                 dispatch({
@@ -89,7 +89,7 @@ export function getPetitionsRejected(summonerName) {
         return axios({
             method: "get",
             withCredentials: true,
-            url: `https://guarded-castle-25124.herokuapp.com/petitions/${summonerName}/filter/rejected`
+            url: `http://localhost:3001/petitions/${summonerName}/filter/rejected`
         })
             .then(summonerPetitionsRejected => {
                 dispatch({
@@ -109,7 +109,7 @@ export function getPetitionsPending(summonerName) {
         return axios({
             method: "get",
             withCredentials: true,
-            url: `https://guarded-castle-25124.herokuapp.com/petitions/${summonerName}/filter/pending`
+            url: `http://localhost:3001/petitions/${summonerName}/filter/pending`
         })
             .then(summonerPetitionsPending => {
                 dispatch({
@@ -135,7 +135,7 @@ export function newPetition(petition) {
                 reason: petition.reason
             },
             withCredentials: true,
-            url: "https://guarded-castle-25124.herokuapp.com/petitions/new"
+            url: "http://localhost:3001/petitions/new"
         })
         .then(newPetition => {
             dispatch({
@@ -159,7 +159,7 @@ export function editReason(data) {
                 reason: data.reason
             },
             withCredentials: true,
-            url: "https://guarded-castle-25124.herokuapp.com/petitions/editReason"
+            url: "http://localhost:3001/petitions/editReason"
         })
         .then(editPetition => {
             dispatch({
@@ -183,7 +183,7 @@ export function addDefense(data) {
                 accusedDefense: data.accusedDefense
             },
             withCredentials: true,
-            url: "https://guarded-castle-25124.herokuapp.com/petitions/addDefense"
+            url: "http://localhost:3001/petitions/addDefense"
         })
         .then(defenseAdded => {
             dispatch({
@@ -207,7 +207,7 @@ export function addGame(data) {
                 game: data.game
             },
             withCredentials: true,
-            url: "https://guarded-castle-25124.herokuapp.com/petitions/addGame"
+            url: "http://localhost:3001/petitions/addGame"
         })
         .then(gameAdded => {
             dispatch({
@@ -230,7 +230,7 @@ export function votePositive(petitionID) {
                 petitionID: petitionID
             },
             withCredentials: true,
-            url: "https://guarded-castle-25124.herokuapp.com/petitions/votePositive"
+            url: "http://localhost:3001/petitions/votePositive"
         })
         .then(petitionVoted => {
             dispatch({
@@ -253,7 +253,7 @@ export function voteNegative(petitionID) {
                 petitionID: petitionID
             },
             withCredentials: true,
-            url: "https://guarded-castle-25124.herokuapp.com/petitions/voteNegative"
+            url: "http://localhost:3001/petitions/voteNegative"
         })
         .then(petitionVoted => {
             dispatch({
@@ -277,7 +277,7 @@ export function addChampionBanned(data) {
                 summonerName: data.summonerName
             },
             withCredentials: true,
-            url: "https://guarded-castle-25124.herokuapp.com/summoner/addChampBanned"
+            url: "http://localhost:3001/summoner/addChampBanned"
         })
         .then(summonerEdited => {
             dispatch({
@@ -301,7 +301,7 @@ export function signIn(data) {
                 password: data.password
             },
             withCredentials: true,
-            url: "https://guarded-castle-25124.herokuapp.com/summoner/signin"
+            url: "http://localhost:3001/summoner/signin"
         })
         .then(userSignIn => {
             dispatch({
@@ -325,7 +325,7 @@ export function signUp(data) {
                 password: data.password
             },
             withCredentials: true,
-            url: "https://guarded-castle-25124.herokuapp.com/summoner/signup"
+            url: "http://localhost:3001/summoner/signup"
         })
         .then(userSignUp => {
             dispatch({
@@ -345,7 +345,7 @@ export function logOut() {
         return axios({
             method: "get",
             withCredentials: true,
-            url: "https://guarded-castle-25124.herokuapp.com/summoner/logout"
+            url: "http://localhost:3001/summoner/logout"
         })
         .then(userLogOut => {
             dispatch({
@@ -365,7 +365,7 @@ export function checkUser() {
         return axios({
             method: "get",
             withCredentials: true,
-            url: "https://guarded-castle-25124.herokuapp.com/summoner/checkUser"
+            url: "http://localhost:3001/summoner/checkUser"
         })
         .then(userLoggedIn => {
             dispatch({
@@ -385,7 +385,7 @@ export function getSummonersName() {
         return axios({
             method: "get",
             withCredentials: true,
-            url: "https://guarded-castle-25124.herokuapp.com/summoner/all"
+            url: "http://localhost:3001/summoner/all"
         })
         .then(names => {
             dispatch({
@@ -424,7 +424,7 @@ export function getSummonerBans(summonerName) {
         return axios({
             method: "get",
             withCredentials: true,
-            url: `https://guarded-castle-25124.herokuapp.com/summoner/${summonerName}/bansComplete`
+            url: `http://localhost:3001/summoner/${summonerName}/bansComplete`
         })
         .then(bans => {
             dispatch({
@@ -444,7 +444,7 @@ export function getPendingPetitions() {
         return axios({
             method: "get",
             withCredentials: true,
-            url: "https://guarded-castle-25124.herokuapp.com/petitions/status/pending"
+            url: "http://localhost:3001/petitions/status/pending"
         })
         .then(pendingPetitions => {
             dispatch({
@@ -464,7 +464,7 @@ export function getUserLogged() {
         return axios({
             method: "get",
             withCredentials: true,
-            url: "https://guarded-castle-25124.herokuapp.com/summoner/userLogged"
+            url: "http://localhost:3001/summoner/userLogged"
         })
         
         .then(userLogged => {

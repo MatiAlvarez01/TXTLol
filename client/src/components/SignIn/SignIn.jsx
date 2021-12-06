@@ -30,11 +30,15 @@ function SignIn() {
                 email: "",
                 password: ""
             })
-            dispatch(getSummonersName());
-            dispatch(checkUser());
-            dispatch(getUserLogged())
+            dispatch(getSummonersName())
             .then(() => {
-                history.push("/")
+                dispatch(checkUser())
+                .then(() => {
+                    dispatch(getUserLogged())
+                    .then(() => {
+                        history.push("/Scrinb0y")
+                    })
+                })
             })
         })
         .catch(err => {
